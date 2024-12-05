@@ -4,10 +4,10 @@
     "Mark Cavage <mcavage@gmail.com>",
     "Cody Peter Mello <cody.mello@joyent.com>"
   ],
-  "name": "@ldapjs/change",
+  "name": "@mbakereth/ldapjs-change",
   "homepage": "https://github.com/ldapjs/change",
   "description": "API for handling LDAP change objects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,8 +15,8 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@ldapjs/asn1": "2.0.0",
-    "@ldapjs/attribute": "1.0.0"
+    "@mbakereth/ldapjs-asn1": "2.0.1",
+    "@mbakereth/ldapjs-attribute": "1.0.1"
   },
   "devDependencies": {
     "@fastify/pre-commit": "^2.0.2",

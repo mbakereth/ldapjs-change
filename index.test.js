@@ -1,8 +1,8 @@
 'use strict'
 
 const tap = require('tap')
-const { BerReader } = require('@ldapjs/asn1')
-const Attribute = require('@ldapjs/attribute')
+const { BerReader } = require('@mbakereth/ldap-asn1')
+const Attribute = require('@mbakereth/ldap-attribute')
 const Change = require('./index')
 
 tap.test('constructor', t => {

@@ -1,7 +1,7 @@
 'use strict'
 
-const { BerReader, BerWriter } = require('@ldapjs/asn1')
-const Attribute = require('@ldapjs/attribute')
+const { BerReader, BerWriter } = require('@mbakereth/ldap-asn1')
+const Attribute = require('@mbakereth/ldap-attribute')
 
 /**
  * Implements an LDAP CHANGE sequence as described in
@@ -15,7 +15,7 @@ class Change {
    * @typedef {object} ChangeParameters
    * @property {string | number} operation One of `add` (0), `delete` (1), or
    * `replace` (2). Default: `add`.
-   * @property {object | import('@ldapjs/attribute')} modification An attribute
+   * @property {object | import('@mbakereth/ldap-attribute')} modification An attribute
    * instance or an object that is shaped like an attribute.
    */
 
@@ -36,7 +36,7 @@ class Change {
   /**
    * The attribute that will be modified by the {@link Change}.
    *
-   * @returns {import('@ldapjs/attribute')}
+   * @returns {import('@mbakereth/ldap-attribute')}
    */
   get modification () {
     return this.#modification
@@ -45,7 +45,7 @@ class Change {
   /**
    * Define the attribute to be modified by the {@link Change}.
    *
-   * @param {object|import('@ldapjs/attribute')} mod
+   * @param {object|import('@mbakereth/ldap-attribute')} mod
    *
    * @throws When `mod` is not an instance of `Attribute` or is not an
    * `Attribute` shaped object.
@@ -137,7 +137,7 @@ class Change {
   /**
    * Serialize the instance to a BER.
    *
-   * @returns {import('@ldapjs/asn1').BerReader}
+   * @returns {import('@mbakereth/ldap-asn1').BerReader}
    */
   toBer () {
     const writer = new BerWriter()
@@ -301,7 +301,7 @@ class Change {
   /**
    * Parse a BER into a new {@link Change} object.
    *
-   * @param {import('@ldapjs/asn1').BerReader} ber The BER to process. It must
+   * @param {import('@mbakereth/ldap-asn1').BerReader} ber The BER to process. It must
    * be at an offset that starts a new change sequence. The reader will be
    * advanced to the end of the change sequence by this method.
    *
